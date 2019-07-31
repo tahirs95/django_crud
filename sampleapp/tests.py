@@ -1,11 +1,11 @@
 from django.test import TestCase
 from .models import DbModel
 from django.http import HttpRequest
-# Create your tests here.
 
 class SimpleModelTestCase(TestCase):
-    def test_homepage_testcode(self):
+    def test_homepage_statuscode(self):
         response = self.client.get('/api/v1/')
+        print(response.status_code)
         self.assertEquals(response.status_code, 200)
     
     def test_create_get_object(self):
